@@ -5,11 +5,11 @@
       <template v-slot:default>
         <thead>
           <tr>
-            <th class="text-left">Nome</th>
-            <th class="text-left">Idade</th>
-            <th class="text-left">Raça</th>
-            <th class="text-left">Sintomas</th>
-            <th class="text-left"></th>
+            <th class="text-center">Nome</th>
+            <th class="text-center">Idade</th>
+            <th class="text-center">Raça</th>
+            <th class="text-center">Sintomas</th>
+            <th class="text-center"></th>
           </tr>
         </thead>
         <tbody>

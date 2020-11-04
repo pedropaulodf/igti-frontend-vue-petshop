@@ -1,13 +1,13 @@
 <template>
-  <v-app>
-    <router-view></router-view>
-  </v-app>
+  <h1>Admin teste</h1>
 </template>
 
 <script>
 export default {
+
 }
 </script>
 
-<style scoped>
+<style>
+
 </style>

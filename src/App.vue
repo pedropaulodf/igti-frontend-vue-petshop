@@ -1,13 +1,15 @@
 <template>
   <v-app>
-    
     <v-app-bar
       app
       color="primary"
       dark
     >
       <div class="d-flex align-center">
-        <h3>Petshop</h3>
+        <h3
+          @click="irParaHome"
+          style="cursor: pointer;"
+        >Petshop</h3>
       </div>
 
       <v-spacer></v-spacer>
@@ -47,5 +49,10 @@ export default {
   components: {
     Petshop,
   },
+  methods: {
+    irParaHome(){
+      this.$router.push('/');
+    }
+  }
 };
 </script>

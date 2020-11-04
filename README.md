@@ -1,4 +1,4 @@
-# modulo-4
+# Petshop Vue - Módulo 4 Bootcamp IGTI
 
 ## Project setup
 ```

@@ -7,6 +7,7 @@
         <v-text-field 
           label="Nome do cliente" 
           v-model="cliente.nome"
+          outlined
           ></v-text-field>
 
         <v-select 
@@ -14,6 +15,7 @@
           v-model="cliente.raca"
           :items="racas" 
           item-text="nome"
+          outlined
           ></v-select>
 
         <v-text-field 
@@ -21,12 +23,14 @@
           label="Idade" 
           v-model="cliente.idade" 
           :rules="rulesInputIdade"
+          outlined
           ></v-text-field>
 
         <v-select
           label="Serviço"
           v-model="cliente.servico"
           :items="servicos"
+          outlined
           >
             <template v-slot:selection="data">
               {{data.item.nome}}
@@ -41,6 +45,7 @@
           v-if="cliente.servico.tipo === 'consulta'"
           v-model="cliente.servico.observacoes"
           label="Sintomas"
+          outlined
           ></v-textarea>
         
         <v-btn

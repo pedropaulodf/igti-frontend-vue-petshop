@@ -7,19 +7,19 @@
           <template v-slot:default>
             <thead>
               <tr>
-                <th class="text-left">
+                <th class="text-center">
                   Nome
                 </th>
-                <th class="text-left">
+                <th class="text-center">
                   Idade
                 </th>
-                <th class="text-left">
+                <th class="text-center">
                   Raça
                 </th>
-                <th class="text-left">
+                <th class="text-center">
                   Serviços
                 </th>
-                <th class="text-left">
+                <th class="text-center">
                   Valor
                 </th>
               </tr>
@@ -36,7 +36,10 @@
             <tfoot>
               <tr>
                 <td>Total</td>
-                <td colspan="4">{{ totalServicos | grana }}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td colspan="4" class="text-center" style="font-weight: bold;">{{ totalServicos | grana }}</td>
               </tr>
             </tfoot>
           </template>
