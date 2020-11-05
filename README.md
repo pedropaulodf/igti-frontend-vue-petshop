@@ -1,3 +1,5 @@
+<img src="readme-screens/web-screen.gif" >
+
 # Petshop em Vue - Módulo 4 Bootcamp IGTI
 [Primeiro projeto em Vue]
 
