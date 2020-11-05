@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <CarrinhoComprasIcone :listaCarrinhoCompras="listaCarrinho"></CarrinhoComprasIcone>
+    <CarrinhoComprasIcone :listaCarrinhoCompras="listaCart"></CarrinhoComprasIcone>
     <v-container>
       <v-btn
         color="primary"
@@ -40,7 +40,7 @@
               <v-btn
                 color="primary"
                 block
-                @click="adicionarAoCarrinho(produto)"
+                @click="adicionarItemCart(produto)"
               >
                 Comprar
               </v-btn>
@@ -55,6 +55,7 @@
 
 <script>
 import api from "@/services/api.js";
+import { mapState, mapMutations } from 'vuex';
 import CarrinhoComprasIcone from '@/components/CarrinhoComprasIcone';
 
 export default {
@@ -84,7 +85,15 @@ export default {
       this.listaCarrinho.push(produto);
       // localStorage.setItem('listaCarrinho', JSON.stringify(this.listaCarrinho));
       // alert(nome + " • de " + preco + " / por" + desconto);
-    }
+    },
+    ... mapMutations([
+      'adicionarItemCart'
+    ])
+  },
+  computed: {
+    ... mapState({
+      listaCart: state => state.listaCart,
+    })
   }
 }
 </script>

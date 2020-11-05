@@ -8,7 +8,7 @@
       >
         <template v-slot:activator="{ on, attrs }">
           <div class="diretaTopo">
-            <v-badge overlap :content="carrinhoLista.length <= 0 ? '0' : carrinhoLista.length" color="deep-orange">
+            <v-badge overlap :content="listaCart.length <= 0 ? '0' : listaCart.length" color="deep-orange">
               <v-btn
                 class="mx-2"
                 fab
@@ -25,7 +25,7 @@
 
         <v-card>
 
-          <v-list v-for="(item, index) in carrinhoLista" :key="index">
+          <v-list v-for="(item, index) in listaCart" :key="index">
 
             <v-list-item-group color="primary">
               <v-list-item>
@@ -35,7 +35,7 @@
                 </v-list-item-avatar>
 
                 <v-list-item-title>{{item.nome}} • ({{item.desconto ? item.desconto : item.preco | grana}})</v-list-item-title>
-                <v-list-item-icon @click="removeItemLista(item)">
+                <v-list-item-icon @click="retirarItemCart(index)">
                   <v-icon>mdi-close</v-icon>
                 </v-list-item-icon>
               </v-list-item>
@@ -47,7 +47,7 @@
 
           <v-list>
             <v-list-item>
-              <v-list-item-title>Total: {{totalCarrinho | grana}}</v-list-item-title>
+              <v-list-item-title>Total: {{totalListaCart | grana}}</v-list-item-title>
             </v-list-item>
           </v-list>
 
@@ -57,6 +57,8 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex';
+
 export default {
   props: ['listaCarrinhoCompras'],
   data: () => {
@@ -78,14 +80,20 @@ export default {
         return acc += cur.preco;
       }, 0);
       return totalSoma;
-    }
+    },
+    ... mapState({
+      listaCart: state => state.listaCart,
+      totalListaCart: state => state.totalListaCart
+    })
   },
   methods: {
     removeItemLista(item) {
       this.$delete(this.carrinhoLista, this.carrinhoLista.findIndex(itemRemocao => itemRemocao.id === item.id), item);
-      
       // localStorage.setItem('listaCarrinho', JSON.stringify(this.carrinhoLista));
-    }
+    },
+    ... mapMutations([
+      'retirarItemCart'
+    ])
   }
 }
 </script>
