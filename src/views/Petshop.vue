@@ -54,9 +54,16 @@ export default {
   },
   data() {
     return {
-      clientesVeterinario: [{'nome': 'Teste 2','idade': 10,'raca': 'Pincher','servico': {'nome': 'Banho e Tosa', 'preco': 60}}],
-      clientesBanho: [{'nome': 'Teste 1','idade': 5,'raca': 'Vira-lata','servico': {'nome': 'Banho', 'preco': 40}}],
-      clientesAtendidos: []
+      clientesVeterinario: [
+        {'nome': 'Teste 2','idade': 10,'raca': 'Pincher','servico': {'nome': 'Consulta Veterinária', 'preco': 100, 'observacoes': 'Vacinou ontem'}}
+      ],
+      clientesBanho: [
+        {'nome': 'Teste 1','idade': 5,'raca': 'Vira-lata','servico': {'nome': 'Banho e Tosa', 'preco': 60, 'extra': true}}
+      ],
+      clientesAtendidos: [
+        {'nome': 'Teste 3','idade': 2,'raca': 'Buldog','servico': {'nome': 'Banho', 'preco': 40, 'extra': false}},
+        {'nome': 'Teste 4','idade': 7,'raca': 'Corgi','servico': {'nome': 'Banho', 'preco': 40, 'extra': false}}
+      ]
     }
   },
   methods: {
