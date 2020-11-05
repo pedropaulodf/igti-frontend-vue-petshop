@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Loja from '../views/Loja'
-import Admin from '@/views/Admin'
+// import Admin from '@/views/Admin'
 
 import Petshop from '@/views/Petshop'
 import ProdutosLista from '@/components/ProdutosLista'
@@ -15,14 +15,14 @@ const routes = [
     name: 'Petshop',
     component: Petshop
   },
-  {
-    path: '/admin',
-    name: 'Admin',
-    component: Admin,
-    meta: {
-      protegida: true
-    }
-  },
+  // {
+  //   path: '/admin',
+  //   name: 'Admin',
+  //   component: Admin,
+  //   meta: {
+  //     protegida: true
+  //   }
+  // },
   {
     path: '/',
     name: 'Loja',
@@ -41,13 +41,13 @@ const router = new VueRouter({
   routes
 });
 
-router.beforeEach((to, from, next) => {
-  // console.log('Verificando se rota é protegida ou não');
-  if (to.meta.protegida) {
-    // console.log('Tentou acessar página protegida');
-    router.push('/');
-  }
-  next();
-})
+// router.beforeEach((to, from, next) => {
+//   // console.log('Verificando se rota é protegida ou não');
+//   if (to.meta.protegida) {
+//     // console.log('Tentou acessar página protegida');
+//     router.push('/');
+//   }
+//   next();
+// })
 
 export default router

@@ -87,10 +87,7 @@ export default {
         type: "success",
         duration: 4000,
       })
-    },
-    ... mapMutations([
-      'adicionarItemCart'
-    ])
+    }
   },
   computed: {
     ... mapState({

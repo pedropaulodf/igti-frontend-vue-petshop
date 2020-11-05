@@ -2,7 +2,7 @@
 [Primeiro projeto em Vue]
 
 ## Tecnologias usadas
-Javascript, Vuex, Vuetify, Vue Router e Axios
+Javascript, Vuex, Vuetify, Vue Router, VueToast e Axios
 
 ## Rodar o servidor
 Depois de ter dado o `yarn install`, rode o comando abaixo:

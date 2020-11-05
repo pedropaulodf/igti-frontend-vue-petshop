@@ -69,7 +69,6 @@
 import { mapState, mapMutations } from "vuex";
 
 export default {
-  // props: ['listaCarrinhoCompras'],
   data: () => {
     return {
       fav: true,
@@ -81,9 +80,9 @@ export default {
   },
   computed: {
     // carrinhoLista: function () {
-    //   // let lista = localStorage.getItem('listaCarrinho');
-    //   // return JSON.parse(lista);
-    //   // return this.listaCarrinhoCompras;
+    //   let lista = localStorage.getItem('listaCarrinho');
+    //   return JSON.parse(lista);
+    //   return this.listaCarrinhoCompras;
     // },
     // totalCarrinho: function () {
     //   let totalSoma = this.carrinhoLista.reduce((acc, cur) => {
