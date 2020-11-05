@@ -54,8 +54,8 @@ export default {
   },
   data() {
     return {
-      clientesVeterinario: [],
-      clientesBanho: [],
+      clientesVeterinario: [{'nome': 'Teste 2','idade': 10,'raca': 'Pincher','servico': {'nome': 'Banho e Tosa', 'preco': 60}}],
+      clientesBanho: [{'nome': 'Teste 1','idade': 5,'raca': 'Vira-lata','servico': {'nome': 'Banho', 'preco': 40}}],
       clientesAtendidos: []
     }
   },

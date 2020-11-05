@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <CarrinhoComprasIcone :listaCarrinhoCompras="listaCarrinho"></CarrinhoComprasIcone>
+    <CarrinhoComprasIcone></CarrinhoComprasIcone>
     <v-container>
       <h1>Produtos</h1>
       <v-row>
@@ -76,15 +76,12 @@ export default {
      this.$router.push({name: 'ProdutosDetalhe', params: {id: produtoId}}) 
     },
     adicionarAoCarrinho(produto){
-      // code
       // this.listaCarrinho.push(produto);
       this.$store.commit('adicionarItemCart', produto);
       this.$toast.success(`<p style="font-family:Roboto, sans-serif;">Produto (${produto.nome}) adicionado ao carrinho!</p>`,{
         type: "success",
         duration: 4000,
       })
-      // localStorage.setItem('listaCarrinho', JSON.stringify(this.listaCarrinho));
-      // alert(nome + " • de " + preco + " / por" + desconto);
     },
     ... mapMutations([
       'adicionarItemCart'

@@ -23,39 +23,39 @@
             </td>
           </tr>
         </tbody>
-    </template>
+      </template>
     </v-simple-table>
-    <div v-else>
-      Nenhum cliente aguardando
-    </div>
+    <div v-else>Nenhum cliente aguardando</div>
   </v-container>
 </template>
 
 <script>
-import Servico from '@/components/Servicos';
+import Servico from "@/components/Servicos";
 export default {
-  props: ['clientes'],
+  props: ["clientes"],
   filters: {
     pergunta: (value) => {
-      if (value === undefined) {return 'Não'};
-      if (typeof value !== 'boolean') {
+      if (value === undefined) {
+        return "Não";
+      }
+      if (typeof value !== "boolean") {
         return value;
       }
-      return value ? 'Sim' : 'Não';
-    }
+      return value ? "Sim" : "Não";
+    },
   },
-  extends: Servico
-}
+  extends: Servico,
+};
 </script>
 
 <style scoped>
-  .atendido{
-    color: rgb(40, 156, 40);
-    font-weight: bold;
-  }
+.atendido {
+  color: rgb(40, 156, 40);
+  font-weight: bold;
+}
 
-  table{
-    width: 100%;
-    text-align: center;
-  }
+table {
+  width: 100%;
+  text-align: center;
+}
 </style>
