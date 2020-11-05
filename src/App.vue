@@ -9,7 +9,7 @@
         <h3
           @click="irParaHome"
           style="cursor: pointer;"
-        >Petshop</h3>
+        >PetshopVue</h3>
       </div>
 
       <v-spacer></v-spacer>

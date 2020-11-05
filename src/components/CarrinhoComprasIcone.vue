@@ -35,7 +35,7 @@
                 </v-list-item-avatar>
 
                 <v-list-item-title>{{item.nome}} • ({{item.desconto ? item.desconto : item.preco | grana}})</v-list-item-title>
-                <v-list-item-icon @click="retirarItemCart(index)">
+                <v-list-item-icon @click="removeItemLista(index, item.nome)">
                   <v-icon>mdi-close</v-icon>
                 </v-list-item-icon>
               </v-list-item>
@@ -47,7 +47,10 @@
 
           <v-list>
             <v-list-item>
-              <v-list-item-title>Total: {{totalListaCart | grana}}</v-list-item-title>
+              <v-list-item-title class="space-between">
+                <div>Total: </div>
+                <div><strong>{{totalListaCart | grana}}</strong></div>
+              </v-list-item-title>
             </v-list-item>
           </v-list>
 
@@ -87,8 +90,16 @@ export default {
     })
   },
   methods: {
-    removeItemLista(item) {
-      this.$delete(this.carrinhoLista, this.carrinhoLista.findIndex(itemRemocao => itemRemocao.id === item.id), item);
+    removeItemLista(item, nome) {
+      // this.$delete(this.carrinhoLista, this.carrinhoLista.findIndex(itemRemocao => itemRemocao.id === item.id), item);
+
+      this.$store.commit('retirarItemCart', item);
+
+      this.$toast.info(`<p style="font-family:Roboto, sans-serif;">Produto (${nome}) excluído ao carrinho!</p>`,{
+        type: "info",
+        duration: 4000,
+      })
+
       // localStorage.setItem('listaCarrinho', JSON.stringify(this.carrinhoLista));
     },
     ... mapMutations([
@@ -104,5 +115,10 @@ export default {
   right: 20px;
   top: 86px;
   z-index: 1;
+}
+.space-between{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 </style>

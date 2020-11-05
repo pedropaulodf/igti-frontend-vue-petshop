@@ -40,7 +40,7 @@
               <v-btn
                 color="primary"
                 block
-                @click="adicionarItemCart(produto)"
+                @click="adicionarAoCarrinho(produto)"
               >
                 Comprar
               </v-btn>
@@ -82,7 +82,12 @@ export default {
     },
     adicionarAoCarrinho(produto){
       // code
-      this.listaCarrinho.push(produto);
+      // this.listaCarrinho.push(produto);
+      this.$store.commit('adicionarItemCart', produto);
+      this.$toast.success(`<p style="font-family:Roboto, sans-serif;">Produto (${produto.nome}) adicionado ao carrinho!</p>`,{
+        type: "success",
+        duration: 4000,
+      })
       // localStorage.setItem('listaCarrinho', JSON.stringify(this.listaCarrinho));
       // alert(nome + " • de " + preco + " / por" + desconto);
     },

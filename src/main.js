@@ -4,7 +4,11 @@ import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify';
 
+import VueToast from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-sugar.css';
+
 Vue.use(Vuex);
+Vue.use(VueToast);
 
 const store = new Vuex.Store({
   state: {
@@ -13,7 +17,7 @@ const store = new Vuex.Store({
   },
   mutations: {
     adicionarItemCart: (state, produto) => {
-      state.listaCart.push(produto),
+      state.listaCart.push(produto)
       state.totalListaCart = state.listaCart.reduce((acc, cur) => {
         if (cur.desconto) {
           return acc += cur.desconto;
@@ -22,7 +26,7 @@ const store = new Vuex.Store({
       }, 0);
     },
     retirarItemCart: (state, index) => {
-      state.listaCart.splice(index, 1),
+      state.listaCart.splice(index, 1)
       state.totalListaCart = state.listaCart.reduce((acc, cur) => {
         if (cur.desconto) {
           return acc += cur.desconto;
